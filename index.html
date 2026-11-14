@@ -41,19 +41,19 @@ button:hover{background:#FFD966}
 function show(key){
   var d = document.getElementById('detail');
   if(key=='cpu'){
-    d.innerHTML = '<div class="emoji">🧠</div><h2>CPU - Otak Komputer</h2><p>CPU adalah pusat pemrosesan semua instruksi dan perhitungan di komputer. Semakin tinggi kecepatan dan jumlah core-nya, semakin cepat komputer memproses data.</p><p><b>Kalau rusak:</b> Komputer tidak bisa menyala / tidak bisa memproses perintah.</p>';
+    d.innerHTML = '<div class="emoji">🧠</div><h2>CPU - Otak Komputer</h2><img src="CPU.jpg"><p>CPU adalah pusat pemrosesan semua instruksi dan perhitungan di komputer. Semakin tinggi kecepatan dan jumlah core-nya, semakin cepat komputer memproses data.</p><p><b>Kalau rusak:</b> Komputer tidak bisa menyala / tidak bisa memproses perintah.</p>';
   }
   if(key=='ram'){
-    d.innerHTML = '<div class="emoji">⚡</div><h2>RAM - Memori Sementara</h2><p>RAM menyimpan data yang sedang diproses agar bisa diakses dengan cepat. RAM besar membuat multitasking lancar, tapi datanya hilang saat komputer mati.</p><p><b>Kalau rusak:</b> Komputer lemot dan sering nge-hang.</p>';
+    d.innerHTML = '<div class="emoji">⚡</div><h2>RAM - Memori Sementara</h2><img src="RAM.jpg"><p>RAM menyimpan data yang sedang diproses agar bisa diakses dengan cepat. RAM besar membuat multitasking lancar, tapi datanya hilang saat komputer mati.</p><p><b>Kalau rusak:</b> Komputer lemot dan sering nge-hang.</p>';
   }
   if(key=='motherboard'){
-    d.innerHTML = '<div class="emoji">🔌</div><h2>Motherboard</h2><p>Papan utama yang menghubungkan CPU, RAM, GPU, dan storage agar bisa saling berkomunikasi dan bekerja sama.</p><p><b>Kalau rusak:</b> Semua komponen tidak bisa terhubung.</p>';
+    d.innerHTML = '<div class="emoji">🔌</div><h2>Motherboard</h2><img src="MOTHERBOARD.jpg"><p>Papan utama yang menghubungkan CPU, RAM, GPU, dan storage agar bisa saling berkomunikasi dan bekerja sama.</p><p><b>Kalau rusak:</b> Semua komponen tidak bisa terhubung.</p>';
   }
   if(key=='storage'){
-    d.innerHTML = '<div class="emoji">💾</div><h2>Storage - SSD / HDD</h2><p>Tempat menyimpan data permanen seperti sistem operasi, aplikasi, dan file. SSD lebih cepat daripada HDD.</p><p><b>Kalau rusak:</b> Data hilang dan komputer tidak bisa booting.</p>';
+    d.innerHTML = '<div class="emoji">💾</div><h2>Storage - SSD / HDD</h2><img src="STORAGE.jpg"><p>Tempat menyimpan data permanen seperti sistem operasi, aplikasi, dan file. SSD lebih cepat daripada HDD.</p><p><b>Kalau rusak:</b> Data hilang dan komputer tidak bisa booting.</p>';
   }
   if(key=='gpu'){
-    d.innerHTML = '<div class="emoji">🎮</div><h2>GPU / VGA Card</h2><p>GPU mengolah grafis dan tampilan ke layar. Sangat penting untuk desain, editing video, dan gaming.</p><p><b>Kalau rusak:</b> Tampilan pecah-pecah atau tidak muncul gambar.</p>';
+    d.innerHTML = '<div class="emoji">🎮</div><h2>GPU / VGA Card</h2><img src="GPU.jpg"><p>GPU mengolah grafis dan tampilan ke layar. Sangat penting untuk desain, editing video, dan gaming.</p><p><b>Kalau rusak:</b> Tampilan pecah-pecah atau tidak muncul gambar.</p>';
   }
   if(key=='psu'){
     d.innerHTML = '<div class="emoji">🔋</div><h2>PSU - Power Supply Unit</h2><img src="PSU.jpg"><p>PSU mengubah listrik AC dari stopkontak menjadi DC dan menyalurkan daya ke motherboard, CPU, GPU, dan storage.</p><p><b>Kalau rusak:</b> Komputer tidak dapat menyala sama sekali.</p>';
