@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jelajah Komponen Komputer</title>
+<style>
+@font-face {
+  font-family: 'KomputerHTML';
+  src: url('04B_30__.ttf') format('truetype');
+  font-display: swap;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 24px 16px; min-height: 100vh;
+  font-family: 'KomputerHTML', Arial, sans-serif;
+  background: #790D16; color: #F5EFE1; text-align: center;
+}
+header { max-width: 850px; margin: 10px auto 26px; }
+h1 { color: #F5EFE1; font-size: clamp(22px, 4vw, 34px); margin-bottom: 12px; }
+header p { color: #F5EFE1; line-height: 1.7; font-family: Arial, sans-serif; }
+.grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px; max-width: 650px; margin: 22px auto;
+}
+button {
+  font-family: 'KomputerHTML', Arial, sans-serif; background: #F5EFE1;
+  border: 2px solid #0B1849; color: #0B1849; padding: 17px 10px;
+  border-radius: 12px; font-size: 15px; cursor: pointer;
+  transition: .2s ease;
+}
+button:hover, button:focus-visible { background: #95271D; color: white; transform: translateY(-2px); }
+#box {
+  background: #fff; color: #0B1849; padding: 22px;
+  border-radius: 14px; max-width: 700px; margin: 22px auto;
+  text-align: left; min-height: 300px; font-family: Arial, sans-serif;
+  box-shadow: 0 8px 24px #36060b55;
+}
+#box h2 { margin: 0 0 12px; color: #0D1C42; text-align: center; }
+#box p { color: #0B1849; line-height: 1.7; }
+#box img {
+  width: 100%; max-width: 440px; height: 250px; object-fit: contain;
+  display: block; margin: 14px auto; border-radius: 10px;
+  background: #f1f1f1; padding: 8px;
+}
+.caption { text-align: center; color: #555 !important; font-size: 12px; }
+.hint { text-align: center; color: #5b6475 !important; font-size: 13px; }
+.footer { font: 12px Arial, sans-serif; color: #F5EFE1; margin: 28px auto 8px; line-height: 1.7; }
+@media (max-width: 420px) {
+  .grid { gap: 8px; }
+  button { font-size: 13px; padding: 14px 6px; }
+  #box { padding: 16px; }
+  #box img { height: 210px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>🖥️ Jelajah Komponen Komputer</h1>
+  <p>Klik salah satu komponen untuk melihat contoh foto dan penjelasan fungsinya.<br>UTS Arsitektur dan Organisasi Komputer</p>
+</header>
+
+<div class="grid">
+  <button onclick="show('CPU')">🧠 CPU</button>
+  <button onclick="show('RAM')">⚡ RAM</button>
+  <button onclick="show('Motherboard')">🔌 Motherboard</button>
+  <button onclick="show('Storage')">💾 Storage</button>
+  <button onclick="show('GPU')">🎮 GPU / VGA</button>
+  <button onclick="show('PSU')">🔋 PSU</button>
+</div>
+
+<div id="box" aria-live="polite">
+  <h2>Silakan pilih komponen di atas</h2>
+  <p class="hint">Foto contoh dan penjelasan akan muncul di bagian ini.</p>
+</div>
+
+<div class="footer">
+  Dibuat oleh Tarisa Melati Bunga Setaman<br>
+  312600111 – Teknik Informatika
+</div>
+
+<script>
+const data = {
+  CPU: {
+    t: 'CPU – Central Processing Unit',
+    img: 'https://commons.wikimedia.org/wiki/Special:FilePath/Cryptoleq%20Processor.jpeg',
+    alt: 'Contoh foto prosesor komputer',
+    d: 'CPU adalah unit pemroses utama atau sering disebut otak komputer. CPU menjalankan instruksi, melakukan operasi aritmetika dan logika, serta mengatur jalannya proses komputer. Bagian penting di dalam CPU antara lain Control Unit (CU), Arithmetic Logic Unit (ALU), dan register.'
+  },
+  RAM: {
+    t: 'RAM – Random Access Memory',
+    img: 'https://commons.wikimedia.org/wiki/Special:FilePath/64MB%20Toshiba%20SDRAM%20stick.JPG',
+    alt: 'Contoh foto modul RAM',
+    d: 'RAM merupakan memori sementara yang menyimpan data dan instruksi dari aplikasi yang sedang digunakan agar dapat diakses CPU dengan cepat. RAM bersifat volatile, artinya data di dalamnya akan hilang ketika komputer dimatikan.'
+  },
+  Motherboard: {
+    t: 'Motherboard – Papan Induk',
+    img: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mainboard%20asus%20pbh%2067-v%20IMGP9326%20wp.jpg',
+    alt: 'Contoh foto motherboard komputer',
+    d: 'Motherboard adalah papan sirkuit utama yang menjadi tempat terhubungnya berbagai komponen komputer, seperti CPU, RAM, kartu grafis, dan media penyimpanan. Motherboard menyediakan jalur komunikasi agar komponen-komponen tersebut dapat saling bertukar data.'
+  },
+  Storage: {
+    t: 'Storage – SSD / HDD',
+    img: 'https://commons.wikimedia.org/wiki/Special:FilePath/3.5%20inch%20hard%20disk%20drive%2C%20side%20view.jpg',
+    alt: 'Contoh foto media penyimpanan hard disk',
+    d: 'Storage adalah perangkat penyimpanan data jangka panjang, seperti sistem operasi, aplikasi, dokumen, dan foto. HDD menyimpan data pada piringan magnetik yang berputar, sedangkan SSD menggunakan memori flash dan umumnya memiliki kecepatan akses lebih tinggi.'
+  },
+  GPU: {
+    t: 'GPU – Graphics Processing Unit',
+    img: 'https://commons.wikimedia.org/wiki/Special:FilePath/2014%20MSI%20GTX%20770%20Lightning.jpg',
+    alt: 'Contoh foto kartu grafis GPU',
+    d: 'GPU atau kartu grafis bertugas mengolah dan menghasilkan tampilan visual yang dikirim ke monitor. GPU membantu pekerjaan grafis seperti menampilkan antarmuka, bermain gim, mengedit video, dan membuat desain 3D.'
+  },
+  PSU: {
+    t: 'PSU – Power Supply Unit',
+    img: 'https://commons.wikimedia.org/wiki/Special:FilePath/Computer%20power%20supply%20unit.jpg',
+    alt: 'Contoh foto power supply komputer',
+    d: 'PSU adalah perangkat yang mengubah listrik AC dari stopkontak menjadi listrik DC dengan tegangan yang dibutuhkan komponen komputer. PSU kemudian menyalurkan daya ke motherboard, CPU, GPU, storage, dan perangkat lainnya.'
+  }
+};
+
+function show(k) {
+  const item = data[k];
+  document.getElementById('box').innerHTML = `
+    <h2>${item.t}</h2>
+    <img src="${item.img}" alt="${item.alt}" loading="lazy"
+      onerror="this.onerror=null; this.src='https://placehold.co/600x350/f1f1f1/0B1849?text=Foto+${encodeURIComponent(k)}';">
+    <p class="caption">Contoh foto: ${item.alt}</p>
+    <p>${item.d}</p>
+    <p class="hint">Catatan: foto contoh ditampilkan dari Wikimedia Commons, sehingga koneksi internet diperlukan.</p>
+  `;
+}
+</script>
+</body>
+</html>
